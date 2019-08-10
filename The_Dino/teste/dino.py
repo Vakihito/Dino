@@ -87,5 +87,10 @@ class Dino(object):
             return
 
         return
-    def atualizaVel(self):
+    def atualiza(self, goUp, goDown):
+        self.Jump(goUp)
+        self.on_jump(goDown)
         self.y += self.velY
+        self.keepUP(goDown)
+
+    
