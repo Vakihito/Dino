@@ -7,6 +7,7 @@ from random import randint
 from time import clock
 from NNDino import NNDino
 from NNDino import evolve
+from NNDino import evolve2
 from NNDino import createFirstDinos
 
 
@@ -64,6 +65,7 @@ def redrawGameWindow():
 
 # cria novo perigo
 def createNewP(vel , listap, x):
+    #or (time.clock() - tempoIni < 20)
     if randint(0,7) < 5:
             listap.append(Cactus(randint(0, 4) ,vel, x))
     else:
@@ -91,7 +93,7 @@ def spawnP(vel, listap):
     #         0 : (90, 90), 1 : (80, 50), 2 : (70, 40), 3 : (60, 30), 4 : (50, 20), 5 : (40, 10)
 
     swc = {
-        0 : (60, 90, 100), 1 : (50 , 80, 40), 2 : ( 50 , 80, 40), 3 : (40, 80, 100), 4 : (40 , 80, 100), 5 : (20 ,30, 60)
+        0 : (60, 90, 100), 1 : (50 , 60, 40), 2 : ( 45 , 55, 40), 3 : (40, 50, 100), 4 : (35 , 40, 100), 5 : (20 ,40, 60)
     }
 
     # retirar isso apos implementacao da saida do programa
@@ -117,7 +119,7 @@ def checkIfHit(velX, listap):
     for i in listap:
         i.move(velX)
         for d in dinos:
-            if i.checkIfHits(d.hitBox) :
+            if i.checkIfHits(d.hitBox) and d.isVivo:
                 d.kill(tempoIni)
                 
     
@@ -167,8 +169,7 @@ while flagOn:
 
     
     flagOn = runTheGame()
-    print(dinos[0].ponto)
-    evolve(dinos) #evolui dos dinossalros
+    evolve2(dinos) #evolui dos dinossalros
     
     
 
