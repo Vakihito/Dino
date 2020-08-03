@@ -20,9 +20,9 @@ class Bird(object):
         self.x = posx
         num = randint(0, 2)
         if num == 0:
-            self.y = 260
+            self.y = 230
         elif num == 1:
-            self.y = (300 + 260) / 2 
+            self.y = (300 + 230) / 2 
         else:
             self.y = 300
         self.velX = vel_x

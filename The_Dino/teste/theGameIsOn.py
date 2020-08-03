@@ -163,7 +163,7 @@ flagOn = True
 while flagOn:
     listap = []
     win.fill((255,255,255))                                  # fills with wight
-    pygame.display.set_caption("Dino Neural Network")       # colocando o nome da janela
+    pygame.display.set_caption("Dino")       # colocando o nome da janela
     tempoIni = clock() 
 
 

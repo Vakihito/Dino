@@ -153,14 +153,14 @@ def changeAll(dinos, i ,var):
     dinos[i].n1[1] += randint(-var, var)
 def lessThan5(dinos):
     var = 100
-    for i in range(CONST_NUMD / 30, CONST_NUMD):
+    for i in range(int(CONST_NUMD / 30), CONST_NUMD):
         dinos[i].heroesNeverDie()
         dinos[i].pd = [randint(-1000, 1000),randint(-1000,1000)]
         dinos[i].pv = [randint(-1000, 1000),randint(-1000,1000)]
         dinos[i].ph = [randint(-1000, 1000),randint(-1000,1000)]
         dinos[i].n0 = [randint(-1000, 1000),randint(-1000,1000)]
         dinos[i].n1 = [randint(-1000, 1000),randint(-1000,1000)]
-    for i in range(CONST_NUMD/30):
+    for i in range(int(CONST_NUMD/30)):
         dinos[i].heroesNeverDie()    
 
 
@@ -273,11 +273,11 @@ def evolve2(dinos):
     print("ponto do dino0 :" , dinos[0].ponto)
     print("ponto do ultimo dino :" , dinos[CONST_NUMD - 1].ponto)
     
-    if  dinos[0].ponto < 4:
+    if  dinos[0].ponto <= 10:
         lessThan5(dinos)
-    elif dinos[0].ponto < 20:
+    elif dinos[0].ponto <= 20:
         lessThan20(dinos)
-    elif dinos[0].ponto < 40:
+    elif dinos[0].ponto <= 40:
         lessThan40(dinos)
     else:
         infinit(dinos)
